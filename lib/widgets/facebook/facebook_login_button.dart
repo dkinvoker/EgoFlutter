@@ -32,7 +32,7 @@ class FacebookLoginButton extends StatelessWidget {
               Image.network(userData["picture"]["data"]["url"])
             ],
           )
-        );
+        )
       );
     }
   }
