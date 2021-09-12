@@ -16,7 +16,7 @@ class FacebookLoginButton extends StatelessWidget {
   }
 
   void _login(BuildContext context) async {
-    final LoginResult result = await FacebookAuth.instance.login();
+    final LoginResult result = await FacebookAuth.instance.login(permissions: ["gaming_profile"]);
     if (result.status == LoginStatus.success) {
       // you are logged
       final AccessToken accessToken = result.accessToken!;
