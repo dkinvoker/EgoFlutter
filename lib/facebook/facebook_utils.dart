@@ -4,11 +4,11 @@ class FacebookUtils {
 
   static void initFacebook() {
     FacebookAuth.instance.webInitialize(
-      appId: "1161368211040906",
+      appId: "885070802415861",
       cookie: true,
       xfbml: true,
       version: "v11.0",
     );
   }
-  
+
 }
