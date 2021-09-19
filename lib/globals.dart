@@ -1,7 +1,7 @@
-import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
+import 'package:ego_flutter/widgets/navigation_frame/navigation_stream.dart';
 
 class Globals {
-  static AccessToken? facebookToken;
+  static String playerName = "";
 
-  static bool get isLogged => Globals.facebookToken != null;
+  static NavigationStream mainNagigation = NavigationStream();
 }

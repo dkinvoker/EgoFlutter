@@ -1,10 +1,11 @@
-import 'package:ego_flutter/facebook/facebook_utils.dart';
-import 'package:ego_flutter/widgets/main_frame/main_frame.dart';
+import 'package:ego_flutter/globals.dart';
+import 'package:ego_flutter/widgets/main_frame/login_page.dart';
+import 'package:ego_flutter/widgets/navigation_frame/navigation_frame.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  FacebookUtils.initFacebook();
   runApp(MyApp());
+  Globals.mainNagigation.push(LoginPage());
 }
 
 class MyApp extends StatelessWidget {
@@ -16,7 +17,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MainFrame(),
+      home: Scaffold(
+        appBar: AppBar(),
+        body: NavigationFrame(
+          navigationStream: Globals.mainNagigation,
+        ),
+      ),
     );
   }
 }
