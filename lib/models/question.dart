@@ -1,6 +1,7 @@
 import 'package:ego_flutter/answer_providers/answer_provider.dart';
 import 'package:ego_flutter/game_context/game_context.dart';
 import 'package:ego_flutter/globals.dart';
+import 'package:ego_flutter/models/question_tag.dart';
 
 class Question {
   final String question;
@@ -8,15 +9,15 @@ class Question {
   final String createdBy;
   final int usageCount;
   final List<AnswerProvider> answerProviders;
-  final List<String> tags;
+  final List<QuestionTag> tags;
 
-  Question(
-      {required this.question,
-      required this.createdDate,
-      required this.createdBy,
-      required this.usageCount,
-      required this.answerProviders,
-      required this.tags});
+  Question({required this.question,
+    required this.createdDate,
+    required this.createdBy,
+    required this.usageCount,
+    required this.answerProviders,
+    required this.tags
+  });
 
   String resolveQuestion(GameContext context) {
     String result = this.question;
