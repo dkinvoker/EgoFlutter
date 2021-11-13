@@ -1,9 +1,8 @@
-import 'package:ego_flutter/widgets/game_page/game_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class PlayButton extends StatelessWidget {
-  const PlayButton({Key? key}) : super(key: key);
+class AddQuestionButton extends StatelessWidget {
+  AddQuestionButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,11 +14,11 @@ class PlayButton extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Icon(
-              Icons.play_arrow_rounded,
+              Icons.add,
               size: 90,
             ),
             Text(
-              "Graj!",
+              "Dodaj!",
               style: TextStyle(fontSize: 48),
             )
           ],
@@ -27,14 +26,8 @@ class PlayButton extends StatelessWidget {
       ),
     );
   }
-}
 
-void _onPresed(BuildContext context) {
-  Navigator.of(context).push(
-    MaterialPageRoute(
-      builder: (con) { 
-        return GamePage(); 
-      }
-    )
-  );
+  void _onPresed(BuildContext context) {
+
+  }
 }
