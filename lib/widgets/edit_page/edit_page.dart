@@ -23,25 +23,25 @@ class _EditPageState extends State<EditPage> {
 
   ItemNode tree = ItemNode(
     "0.jpg",
-    dupa: [
+    children: [
       ItemNode(
         "A.jpg",
-        dupa: [ItemNode("AA.jpg")]
+        children: [ItemNode("AA.jpg")]
       ),
       ItemNode(
         "B.jpg",
-        dupa: [
+        children: [
           ItemNode("BA.jpg"),
           ItemNode("BB.jpg")
         ]
       ),
       ItemNode(
         "C.jpg",
-        dupa: [
+        children: [
           ItemNode("CA.jpg"),
           ItemNode(
             "CB.jpg",
-            dupa: [ItemNode("CBA.jpg")]
+            children: [ItemNode("CBA.jpg")]
           ),
           ItemNode("CC.jpg")
         ]

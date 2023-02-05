@@ -13,9 +13,9 @@ class ItemTree extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (tree.dupa.length == 0)
+    if (tree.children.length == 0)
       return _renderAlone();
-    if (tree.dupa.length == 1)
+    if (tree.children.length == 1)
       return _renderWithSingleChild();
     return _renderSubTree();
   }
@@ -45,7 +45,7 @@ class ItemTree extends StatelessWidget {
       children: [
         _createImage(this.tree.assetName),
         _createVerticalLine(this.lineThickness, this.lineColor),
-        _createImage(this.tree.dupa[0].assetName)
+        _createImage(this.tree.children[0].assetName)
       ],
     );
   }
@@ -59,8 +59,8 @@ class ItemTree extends StatelessWidget {
             _createVerticalLine(this.lineThickness, this.lineColor),
             Padding(
               padding: EdgeInsets.only(
-                  left:  constrains.maxWidth / 2 / tree.dupa.length - this.lineThickness / 2,
-                  right: constrains.maxWidth / 2 / tree.dupa.length - this.lineThickness / 2
+                  left:  constrains.maxWidth / 2 / tree.children.length - this.lineThickness / 2,
+                  right: constrains.maxWidth / 2 / tree.children.length - this.lineThickness / 2
                 ),
                 child: Divider(
                   color: this.lineColor,
@@ -71,7 +71,7 @@ class ItemTree extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: this.tree.dupa.map((e) => Flexible(
+              children: this.tree.children.map((e) => Flexible(
                 fit: FlexFit.tight,
                 child: _ItemSubTree(
                   tree: e, 
